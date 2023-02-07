@@ -1,13 +1,13 @@
 package Clases;
 
-public class Clientes {
+public class Cliente {
 	String dni;
 	String nombre;
 	String apellidos;
 	String direccion;
 	String localidad;
 	
-	public Clientes(String dni, String nombre, String apellidos, String direccion, String localidad) {
+	public Cliente(String dni, String nombre, String apellidos, String direccion, String localidad) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -15,7 +15,7 @@ public class Clientes {
 		this.localidad = localidad;
 	}
 	
-	public Clientes() {
+	public Cliente() {
 		
 	}
 
