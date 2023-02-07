@@ -12,6 +12,8 @@ public class Menus {
 	
 	public static final int REALIZAR_RESERVA=1;
 	public static final int ANULAR_RESERVA=2;
+	public static final int MOSTRAR_RESREVA_CLIENTE=3;
+	public static final int MOSTRAR_RESERVAS=4;
 	
 	public static final int ALTA_HOTEL=1;
 	
