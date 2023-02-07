@@ -6,9 +6,10 @@ public class Menus {
 	public static final int GESTION_RESERVAS=2;
 	public static final int GESTION_HOTELES=3;
 	
-	public static final int REGISTRAR_CLIENTES=1;
-	public static final int BUSCAR_CLIENTE=2;
-	public static final int MOSTRAR_CLIENTES=3;
+	public static final int REGISTRAR_CLIENTE=1;
+	public static final int BORRAR_CLIENTE=2;
+	public static final int BUSCAR_CLIENTE=3;
+	public static final int MOSTRAR_CLIENTES=4;
 	
 	public static final int REALIZAR_RESERVA=1;
 	public static final int ANULAR_RESERVA=2;
@@ -30,7 +31,8 @@ public class Menus {
 	
 	public static void menuClientes() {
 		System.out.println("--MENU CLIETES--");
-		System.out.println(REGISTRAR_CLIENTES+". Registrar clientes");
+		System.out.println(REGISTRAR_CLIENTE+". Registrar clientes");
+		System.out.println(BORRAR_CLIENTE+". Borrar clientes");
 		System.out.println(BUSCAR_CLIENTE+". Buscar cliente");
 		System.out.println(MOSTRAR_CLIENTES+". Mostrar clientes");
 		System.out.println("Escoja una opcion:");
