@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import Clases.Cliente;
+import Clases.*;
 
 public class GestorBBDD extends Conector{
 
@@ -22,6 +22,16 @@ public class GestorBBDD extends Conector{
 		pt.setString(3,cliente.getApellidos());
 		pt.setString(4,cliente.getDireccion());
 		pt.setString(5,cliente.getLocalidad());
+		
+		pt.execute();
+	}
+	
+	public void borrarCliente(String dni) throws SQLException {
+		sentencia="DELETE FROM clientes WHERE dni=?";
+		
+		pt=getCon().prepareStatement(sentencia);
+		
+		pt.setString(1, dni);
 		
 		pt.execute();
 	}
@@ -70,14 +80,23 @@ public class GestorBBDD extends Conector{
 	
 	
 // Gestor reservas-------------------------------------------------------
-	public void realizarReserva(String dni) {
-		Cliente cliente=new Cliente();
-		try {
-			cliente=getCliente(dni);
-		}
-		catch(Exception e) {
-			System.out.println("No existe el cliente");
-		}
+	public void realizarReserva(Reserva reserva) {
+
+		
+	}
+	
+	public void anularReserva(Reserva reserva) {
+
+		
+	}
+	
+	public Reserva getReserva(int id) {
+		
+		return null;
+	}
+	
+	public ArrayList<Reserva> getReservas(){
+		return null;
 	}
 // Gestor de hoteles-----------------------------------------------------
 }
