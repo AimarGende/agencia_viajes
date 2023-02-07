@@ -2,20 +2,20 @@ package Complementarios;
 
 public class Menus {
 
-	static final int GESTION_CLIENTES=1;
-	static final int GESTION_RESERVAS=2;
-	static final int GESTION_HOTELES=3;
+	public static final int GESTION_CLIENTES=1;
+	public static final int GESTION_RESERVAS=2;
+	public static final int GESTION_HOTELES=3;
 	
-	static final int REGISTRAR_CLIENTES=1;
-	static final int BUSCAR_CLIENTE=2;
-	static final int MOSTRAR_CLIENTES=3;
+	public static final int REGISTRAR_CLIENTES=1;
+	public static final int BUSCAR_CLIENTE=2;
+	public static final int MOSTRAR_CLIENTES=3;
 	
-	static final int REALIZAR_RESERVA=1;
-	static final int ANULAR_RESERVA=2;
+	public static final int REALIZAR_RESERVA=1;
+	public static final int ANULAR_RESERVA=2;
 	
-	static final int ALTA_HOTEL=1;
+	public static final int ALTA_HOTEL=1;
 	
-	static final int SALIR=0;
+	public static final int SALIR=0;
 	
 	public static void menuPrincipal() {
 		System.out.println("--MENU PRINCIPAL--");
