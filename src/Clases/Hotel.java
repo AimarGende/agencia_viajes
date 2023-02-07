@@ -1,6 +1,6 @@
 package Clases;
 
-public class Hoteles {
+public class Hotel {
 	int id;
 	String cif;
 	String nombre;
@@ -8,7 +8,7 @@ public class Hoteles {
 	int estrellas;
 	String compania;
 	
-	public Hoteles(int id, String cif, String nombre, String gerente, int estrellas, String compania) {
+	public Hotel(int id, String cif, String nombre, String gerente, int estrellas, String compania) {
 		this.id = id;
 		this.cif = cif;
 		this.nombre = nombre;
@@ -17,7 +17,7 @@ public class Hoteles {
 		this.compania = compania;
 	}
 
-	public Hoteles() {
+	public Hotel() {
 
 	}
 

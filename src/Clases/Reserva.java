@@ -2,13 +2,13 @@ package Clases;
 
 import java.util.Date;
 
-public class Reservas {
+public class Reserva {
 	int id;
 	int id_habitacion;
 	String dni;
 	Date desde;
 	Date hasta;
-	public Reservas(int id, int id_habitacion, String dni, Date desde, Date hasta) {
+	public Reserva(int id, int id_habitacion, String dni, Date desde, Date hasta) {
 		super();
 		this.id = id;
 		this.id_habitacion = id_habitacion;
@@ -17,7 +17,7 @@ public class Reservas {
 		this.hasta = hasta;
 	}
 	
-	public Reservas() {
+	public Reserva() {
 		
 	}
 

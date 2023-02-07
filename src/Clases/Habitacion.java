@@ -1,13 +1,13 @@
 package Clases;
 
-public class Habitaciones {
+public class Habitacion {
 	int id;
 	int id_hotel;
 	String numero;
 	String descripcion;
 	double precio;
 	
-	public Habitaciones(int id, int id_hotel, String numero, String descripcion, double precio) {
+	public Habitacion(int id, int id_hotel, String numero, String descripcion, double precio) {
 		this.id = id;
 		this.id_hotel = id_hotel;
 		this.numero = numero;
@@ -15,7 +15,7 @@ public class Habitaciones {
 		this.precio = precio;
 	}
 	
-	public Habitaciones() {
+	public Habitacion() {
 		
 	}
 
