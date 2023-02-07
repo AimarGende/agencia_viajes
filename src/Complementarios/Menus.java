@@ -31,16 +31,19 @@ public class Menus {
 		System.out.println(REGISTRAR_CLIENTES+". Registrar clientes");
 		System.out.println(BUSCAR_CLIENTE+". Buscar cliente");
 		System.out.println(MOSTRAR_CLIENTES+". Mostrar clientes");
+		System.out.println("Escoja una opcion:");
 	}
 
 	public static void menuReserva() {
 		System.out.println("--MENU RESERVAS--");
 		System.out.println(REALIZAR_RESERVA+". Realizar reserva");
 		System.out.println(ANULAR_RESERVA+". Anular reserva");
+		System.out.println("Escoja una opcion:");
 	}
 	
 	public static void menuHotel() {
 		System.out.println("--MENU HOTEL--");
 		System.out.println(ALTA_HOTEL+". Darse de alta en un hotel");
+		System.out.println("Escoja una opcion:");
 	}
 }
