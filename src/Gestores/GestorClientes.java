@@ -18,7 +18,13 @@ public class GestorClientes {
 			opcion=Integer.parseInt(sc.nextLine());
 			
 			switch (opcion) {
-			case Menus.REGISTRAR_CLIENTES: 
+			case Menus.REGISTRAR_CLIENTE: 
+				gest.conectar();
+				
+				
+				gest.cerrar();
+				break;
+			case Menus.BORRAR_CLIENTE:
 				gest.conectar();
 				
 				
