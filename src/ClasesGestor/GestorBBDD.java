@@ -99,4 +99,21 @@ public class GestorBBDD extends Conector{
 		return null;
 	}
 // Gestor de hoteles-----------------------------------------------------
+	
+	public Hotel getHotel(int id) {
+		return null;
+	}
+	
+	public ArrayList<Hotel> getHoteles(int id) {
+		return null;
+	}
+// Gestor habitaciones---------------------------------------------------
+	
+	public Habitacion getHabitacion(int id, int id_hotel) {
+		return null;
+	}
+	
+	public ArrayList<Hotel> getHabitaciones(int id, int id_hotel) {
+		return null;
+	}
 }
