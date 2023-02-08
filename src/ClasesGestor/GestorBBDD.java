@@ -118,7 +118,7 @@ public class GestorBBDD extends Conector{
 		return null;
 	}
 	
-	public ArrayList<Habitacion> getHoteles() {
+	public ArrayList<Hotel> getHoteles() {
 		return null;
 	}
 // Gestor habitaciones---------------------------------------------------
@@ -148,6 +148,29 @@ public class GestorBBDD extends Conector{
 		sentencia="SELECT * FROM habitaciones";
 		pt=getCon().prepareStatement(sentencia);
 		
+		ResultSet result=pt.executeQuery();
+		
+		while(result.next()) {
+			Habitacion habitacion= new Habitacion();
+			
+			habitacion.setId(result.getInt("id"));
+			habitacion.setId_hotel(result.getInt("id_hotel"));
+			habitacion.setNumero(result.getString("numero"));
+			habitacion.setDescripcion(result.getString("descripcion"));
+			habitacion.setPrecio(result.getDouble("precio"));
+		
+			habitaciones.add(habitacion);
+		}
+		
+		return habitaciones;
+	}
+	public ArrayList<Habitacion> getHabitacionesPorHotel(int id_hotel) throws SQLException {
+		ArrayList<Habitacion> habitaciones=new ArrayList<Habitacion>();
+		
+		sentencia="SELECT * FROM habitaciones WHERE id_hotel=?";
+		pt=getCon().prepareStatement(sentencia);
+		
+		pt.setInt(1, id_hotel);
 		ResultSet result=pt.executeQuery();
 		
 		while(result.next()) {
