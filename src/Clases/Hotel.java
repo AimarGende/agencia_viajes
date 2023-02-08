@@ -9,7 +9,6 @@ public class Hotel {
 	String gerente;
 	int estrellas;
 	String compania;
-	ArrayList<Habitacion> habitaciones=new ArrayList<Habitacion>();
 	
 	public Hotel(int id, String cif, String nombre, String gerente, int estrellas, String compania) {
 		this.id = id;
