@@ -31,9 +31,6 @@ public class FormularioDeDatos {
 		Reserva reserva=new Reserva();
 		SimpleDateFormat fecha=new SimpleDateFormat("dd/MM");
 		
-		System.out.println("Introduce la id de la reserva:");
-		reserva.setId(Integer.parseInt(sc.nextLine()));
-		
 		System.out.println("Introduce la id de la habitacion");
 		reserva.setId_habitacion(Integer.parseInt(sc.nextLine()));
 
@@ -51,9 +48,6 @@ public class FormularioDeDatos {
 	public static Hotel datosHotel(Scanner sc) {
 		Hotel hotel=new Hotel();
 		
-		System.out.println("Introduce la id del hotel:");
-		hotel.setId(Integer.parseInt(sc.nextLine()));
-
 		System.out.println("Introduce el CIF del hotel:");
 		hotel.setCif(sc.nextLine());
 		
