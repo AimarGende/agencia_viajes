@@ -21,7 +21,7 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException {
 			switch (opcion) {
 			case Menus.REALIZAR_RESERVA: 
 				gest.conectar();
-				
+				//Pedir dni cliente
 				
 				gest.cerrar();
 				break;
