@@ -77,12 +77,26 @@ public class GestorBBDD extends Conector{
 		return clientes;
 	}
 	
-	
+
 	
 // Gestor reservas-------------------------------------------------------
-	public void realizarReserva(Reserva reserva) {
-
+	public boolean comprobarCliente(String dni) throws SQLException {
+		boolean esta =false;
+		if(getCliente(dni).getDni().equals(dni)) {
+			esta=true;
+		}
+		return esta;
+	}
+	
+	public void realizarReserva(String dni) throws SQLException {
+		boolean esta=comprobarCliente(dni);
+		Reserva reserva=new Reserva();
 		
+		if(esta) {
+			//pedir id hotel
+			//visualizar habitaciones
+			//
+		}
 	}
 	
 	public void anularReserva(Reserva reserva) {
@@ -100,20 +114,54 @@ public class GestorBBDD extends Conector{
 	}
 // Gestor de hoteles-----------------------------------------------------
 	
-	public Hotel getHotel(int id) {
+	public Habitacion getHotel(int id) {
 		return null;
 	}
 	
-	public ArrayList<Hotel> getHoteles(int id) {
+	public ArrayList<Habitacion> getHoteles() {
 		return null;
 	}
 // Gestor habitaciones---------------------------------------------------
 	
-	public Habitacion getHabitacion(int id, int id_hotel) {
-		return null;
+	public Habitacion getHabitacion(int id, int id_hotel) throws SQLException {
+		Habitacion habitacion=new Habitacion();
+		
+		sentencia="SELECT * FROM habitaciones WHERE id=? AND id_hotel=?";
+		pt=getCon().prepareStatement(sentencia);
+		pt.setInt(1, id);
+		pt.setInt(2, id_hotel);
+		
+		ResultSet result=pt.executeQuery();
+		
+		result.next();
+		habitacion.setId(result.getInt("id"));
+		habitacion.setId_hotel(result.getInt("id_hotel"));
+		habitacion.setNumero(result.getString("numero"));
+		habitacion.setDescripcion(result.getString("descripcion"));
+		habitacion.setPrecio(result.getDouble("precio"));
+		return habitacion;
 	}
 	
-	public ArrayList<Hotel> getHabitaciones(int id, int id_hotel) {
-		return null;
+	public ArrayList<Habitacion> getHabitaciones() throws SQLException {
+		ArrayList<Habitacion> habitaciones=new ArrayList<Habitacion>();
+		
+		sentencia="SELECT * FROM habitaciones";
+		pt=getCon().prepareStatement(sentencia);
+		
+		ResultSet result=pt.executeQuery();
+		
+		while(result.next()) {
+			Habitacion habitacion= new Habitacion();
+			
+			habitacion.setId(result.getInt("id"));
+			habitacion.setId_hotel(result.getInt("id_hotel"));
+			habitacion.setNumero(result.getString("numero"));
+			habitacion.setDescripcion(result.getString("descripcion"));
+			habitacion.setPrecio(result.getDouble("precio"));
+		
+			habitaciones.add(habitacion);
+		}
+		
+		return habitaciones;
 	}
 }
