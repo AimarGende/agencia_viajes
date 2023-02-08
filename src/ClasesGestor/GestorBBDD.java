@@ -82,9 +82,14 @@ public class GestorBBDD extends Conector{
 // Gestor reservas-------------------------------------------------------
 	public boolean comprobarCliente(String dni) throws SQLException {
 		boolean esta =false;
-		if(getCliente(dni).getDni().equals(dni)) {
-			esta=true;
+		try {		
+			if(getCliente(dni).getDni().equals(dni)) {
+				esta=true;
+			}
+		}catch(Exception e){
+			System.out.println("No existe el cliente");
 		}
+
 		return esta;
 	}
 	
