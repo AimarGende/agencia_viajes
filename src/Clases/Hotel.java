@@ -1,5 +1,7 @@
 package Clases;
 
+import java.util.ArrayList;
+
 public class Hotel {
 	int id;
 	String cif;
@@ -7,6 +9,7 @@ public class Hotel {
 	String gerente;
 	int estrellas;
 	String compania;
+	ArrayList<Habitacion> habitaciones=new ArrayList<Habitacion>();
 	
 	public Hotel(int id, String cif, String nombre, String gerente, int estrellas, String compania) {
 		this.id = id;
@@ -68,7 +71,11 @@ public class Hotel {
 	public void setCompania(String compania) {
 		this.compania = compania;
 	}
-
+	
+	public void addHabitacion(Habitacion habitacion) {
+		
+	}
+	
 	@Override
 	public String toString() {
 		return "id=" + id + ", cif=" + cif + ", nombre=" + nombre + ", gerente=" + gerente + ", estrellas="
