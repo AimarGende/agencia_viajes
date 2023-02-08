@@ -1,6 +1,7 @@
 package Gestores;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Clases.Cliente;
@@ -12,6 +13,7 @@ public class GestorClientes {
 		
 		GestorBBDD gest= new GestorBBDD();
 		Cliente cliente= new Cliente();
+		String dni="";
 		int opcion=0;
 		
 		do {
@@ -21,26 +23,27 @@ public class GestorClientes {
 			switch (opcion) {
 			case Menus.REGISTRAR_CLIENTE: 
 				gest.conectar();
-				
-				
+				cliente=FormularioDeDatos.datosCliente(sc);
+				gest.registrarCliente(cliente);				
 				gest.cerrar();
 				break;
 			case Menus.BORRAR_CLIENTE:
 				gest.conectar();
-				
-				
+				dni=FormularioDeDatos.pedirDniCliente(sc);
+				gest.borrarCliente(dni);
 				gest.cerrar();
 				break;
 			case Menus.BUSCAR_CLIENTE:
 				gest.conectar();
-				
-				
+				dni=FormularioDeDatos.pedirDniCliente(sc);
+				cliente=gest.getCliente(dni);
+				Visor.mostrarCliente(cliente);
 				gest.cerrar();
 				break;
 			case Menus.MOSTRAR_CLIENTES:
 				gest.conectar();
-				
-				
+				ArrayList<Cliente> clientes=gest.getClientes();
+				Visor.mostrarClientes(clientes);
 				gest.cerrar();
 				break;
 			default:
