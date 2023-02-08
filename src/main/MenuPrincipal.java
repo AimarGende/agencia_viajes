@@ -14,7 +14,6 @@ public class MenuPrincipal {
 		do {
 			Menus.menuPrincipal();
 			opcion=Integer.parseInt(sc.nextLine());
-			
 			switch(opcion) {
 				case Menus.GESTION_CLIENTES:
 					GestorClientes.run(sc);
@@ -24,6 +23,9 @@ public class MenuPrincipal {
 					break;
 				case Menus.GESTION_HOTELES:
 					GestorHotel.run(sc);
+					break;
+				default:
+					System.out.println("Opcion equivocada");
 					break;
 			}
 		}while(opcion!=Menus.SALIR);

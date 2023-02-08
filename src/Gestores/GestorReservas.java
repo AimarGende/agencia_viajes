@@ -15,6 +15,7 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException {
 		int opcion=0;
 		
 		do {
+			Menus.menuReserva();
 			opcion=Integer.parseInt(sc.nextLine());
 			
 			switch (opcion) {

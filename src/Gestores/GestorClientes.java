@@ -15,6 +15,7 @@ public class GestorClientes {
 		int opcion=0;
 		
 		do {
+			Menus.menuClientes();
 			opcion=Integer.parseInt(sc.nextLine());
 			
 			switch (opcion) {
