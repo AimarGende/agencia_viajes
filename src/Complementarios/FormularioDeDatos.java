@@ -7,7 +7,7 @@ import java.util.Scanner;
 import Clases.*;
 
 public class FormularioDeDatos {
-	public Cliente datosCliente(Scanner sc) {
+	public static Cliente datosCliente(Scanner sc) {
 		Cliente cliente=new Cliente();
 		
 		System.out.println("Introduce el dni del cliente");
@@ -27,7 +27,7 @@ public class FormularioDeDatos {
 		
 		return cliente;
 	}
-	public Reserva datosReserva(Scanner sc) throws ParseException {
+	public static Reserva datosReserva(Scanner sc) throws ParseException {
 		Reserva reserva=new Reserva();
 		SimpleDateFormat fecha=new SimpleDateFormat("dd/MM");
 		
@@ -48,7 +48,7 @@ public class FormularioDeDatos {
 		
 		return reserva;
 	}
-	public Hotel datosHotel(Scanner sc) {
+	public static Hotel datosHotel(Scanner sc) {
 		Hotel hotel=new Hotel();
 		
 		System.out.println("Introduce la id del hotel:");
@@ -72,7 +72,7 @@ public class FormularioDeDatos {
 
 		return hotel;
 	}
-	public Habitacion datosHabitacion(Scanner sc) {
+	public static Habitacion datosHabitacion(Scanner sc) {
 		Habitacion habitacion=new Habitacion();
 		
 		System.out.println("Introduce el id de la habitacion");
@@ -93,28 +93,28 @@ public class FormularioDeDatos {
 		return habitacion;
 	}
 	
-	public String pedirDniCliente(Scanner sc) {
+	public static String pedirDniCliente(Scanner sc) {
 		String dni;
 		System.out.println("Introduce el dni del cliente:");
 		dni=sc.nextLine();
 		return dni;
 	}
 	
-	public int pedirIdHotel(Scanner sc) {
+	public static int pedirIdHotel(Scanner sc) {
 		int id=0;
 		System.out.println("Introduce el id del hotel:");
 		id=Integer.parseInt(sc.nextLine());
 		return id;
 	}
 	
-	public int pedirIdHabitacion(Scanner sc) {
+	public static int pedirIdHabitacion(Scanner sc) {
 		int id=0;
 		System.out.println("Introduce el id de la habitacion:");
 		id=Integer.parseInt(sc.nextLine());
 		return id;
 	}	
 	
-	public int pedirIdReserva(Scanner sc) {
+	public static int pedirIdReserva(Scanner sc) {
 		int id=0;
 		System.out.println("Introduce el id de la reserva:");
 		id=Integer.parseInt(sc.nextLine());
