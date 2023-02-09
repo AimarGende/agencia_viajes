@@ -213,6 +213,17 @@ public class GestorBBDD extends Conector{
 		while(!opcion.equals("no"));
 	}
 	
+	public void bajaHotel(int id) throws SQLException {
+		sentencia="DELETE FROM hoteles WHERE id=?";
+		pt=getCon().prepareStatement(sentencia);
+		
+		pt.setInt(1, id);
+		
+		pt.execute();
+		
+		eliminarHabitacionDeHotel(id);
+	}
+	
 	public int maxIdHotel() throws SQLException {
 		int id=0;
 		sentencia="SELECT MAX(id) FROM hoteles";

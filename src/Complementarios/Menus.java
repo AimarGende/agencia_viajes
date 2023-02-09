@@ -18,8 +18,10 @@ public class Menus {
 	
 	public static final int ALTA_HOTEL=1;
 	public static final int BAJA_HOTEL=2;
-	public static final int VER_HOTEL=3;
-	public static final int VER_HOTELES=4;
+	public static final int INSERTAR_HABITACION=3;
+	public static final int ELIMINAR_HABITACION=4;
+	public static final int VER_HOTEL=5;
+	public static final int VER_HOTELES=6;
 	
 	public static final int SALIR=0;
 	
