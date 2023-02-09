@@ -29,6 +29,7 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException, 
 				String dni=FormularioDeDatos.pedirDniCliente(sc);
 				gest.realizarReserva(dni, sc);
 				gest.cerrar();
+				System.out.println("Reserva realizada");
 				break;
 			case Menus.ANULAR_RESERVA:
 				gest.conectar();
