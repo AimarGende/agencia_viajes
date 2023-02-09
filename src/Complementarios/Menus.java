@@ -1,6 +1,10 @@
 package Complementarios;
 
 public class Menus {
+	
+	public static final int EXISTE = 0;
+	public static final int NO_EXISTE_HOTEL = 1;
+	public static final int NO_EXISTE_CLIENTE = 2;
 
 	public static final int GESTION_CLIENTES=1;
 	public static final int GESTION_RESERVAS=2;

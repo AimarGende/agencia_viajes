@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 import Clases.*;
 import Complementarios.FormularioDeDatos;
+import Complementarios.Menus;
 import Complementarios.Visor;
 
 public class GestorBBDD extends Conector{
@@ -92,13 +93,13 @@ public class GestorBBDD extends Conector{
 				esta=true;
 			}
 		}catch(Exception e){
-			System.out.println("No existe el cliente");
+			
 		}
 
 		return esta;
 	}
 	
-	public void realizarReserva(String dni, Scanner sc) throws SQLException, ParseException {
+	public int realizarReserva(String dni, Scanner sc) throws SQLException, ParseException {
 		boolean esta=comprobarCliente(dni);
 		Reserva reserva=new Reserva();
 		int id_hotel=0;
@@ -106,7 +107,7 @@ public class GestorBBDD extends Conector{
 		if(esta) {
 			id_hotel=FormularioDeDatos.pedirIdHotel(sc);
 			if(getHabitacionesPorHotel(id_hotel).size()==0) {
-				System.out.println("No existen habitaciones para este hotel");
+				return Menus.NO_EXISTE_HOTEL;
 			}
 			else {
 				Visor.mostrarHabitaciones(getHabitacionesPorHotel(id_hotel));
@@ -121,11 +122,12 @@ public class GestorBBDD extends Conector{
 				pt.setDate(4, new Date(reserva.getHasta().getTime()));
 				
 				pt.execute();
+				return Menus.EXISTE;
 			}
-		
+	
 		}
-		else if(!esta) {
-			System.out.println("No existe ese dni de cliente, porfavor registrese primero en el sistema");
+		else {
+			return Menus.NO_EXISTE_CLIENTE;
 		}
 		
 		

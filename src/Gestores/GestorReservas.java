@@ -1,5 +1,6 @@
 package Gestores;
 
+import java.awt.Menu;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Scanner;
@@ -27,7 +28,20 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException, 
 			case Menus.REALIZAR_RESERVA: 
 				gest.conectar();
 				String dni=FormularioDeDatos.pedirDniCliente(sc);
-				gest.realizarReserva(dni, sc);
+				int resultado = gest.realizarReserva(dni, sc);
+				switch (resultado) {
+				case Menus.EXISTE: 
+					System.out.println("Reserva completada");
+					break;
+				case Menus.NO_EXISTE_CLIENTE:
+					System.out.println("Error, no existe el cliente");
+					break;
+				case Menus.NO_EXISTE_HOTEL:
+					System.out.println("Error, no hay habitaciones para ese hotel");
+					break;
+				default:
+					throw new IllegalArgumentException("Unexpected value: " + resultado);
+				}
 				gest.cerrar();
 				System.out.println("Reserva realizada");
 				break;
