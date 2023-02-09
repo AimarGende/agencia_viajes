@@ -289,6 +289,22 @@ public class GestorBBDD extends Conector{
 		
 	}
 	
+	public void eliminarHabitacionDeHotel(int id_hotel) throws SQLException {
+		sentencia="DELETE FROM habitaciones WHERE id_hotel=?";
+		pt=getCon().prepareStatement(sentencia);
+		
+		pt.setInt(1, id_hotel);
+		pt.execute();
+	}
+	
+	public void eliminarHabitacion(int id) throws SQLException {
+		sentencia="DELETE FROM habitaciones WHERE id=?";
+		pt=getCon().prepareStatement(sentencia);
+		
+		pt.setInt(1, id);
+		pt.execute();
+	}
+	
 	public Habitacion getHabitacion(int id, int id_hotel) throws SQLException {
 		Habitacion habitacion=new Habitacion();
 		
