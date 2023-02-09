@@ -106,17 +106,23 @@ public class GestorBBDD extends Conector{
 		if(esta) {
 			id_hotel=FormularioDeDatos.pedirIdHotel(sc);
 			Visor.mostrarHabitaciones(getHabitacionesPorHotel(id_hotel));
-			reserva=FormularioDeDatos.datosReserva(sc);
-			
-			sentencia="INSERT INTO reservas (id_habitacion, dni, desde, hasta) VALUES(?,?,?,?)";
-			pt=getCon().prepareStatement(sentencia);
-			
-			pt.setInt(1, reserva.getId_habitacion());
-			pt.setString(2, reserva.getDni());
-			pt.setDate(3, new Date(reserva.getDesde().getTime()));
-			pt.setDate(4, new Date(reserva.getHasta().getTime()));
-			
-			pt.execute();
+			if(getHabitacionesPorHotel(id_hotel).equals(null)) {
+				System.out.println("No existen habitaciones para este hotel");
+			}
+			else {
+				reserva=FormularioDeDatos.datosReserva(sc);
+				
+				sentencia="INSERT INTO reservas (id_habitacion, dni, desde, hasta) VALUES(?,?,?,?)";
+				pt=getCon().prepareStatement(sentencia);
+				
+				pt.setInt(1, reserva.getId_habitacion());
+				pt.setString(2, reserva.getDni());
+				pt.setDate(3, new Date(reserva.getDesde().getTime()));
+				pt.setDate(4, new Date(reserva.getHasta().getTime()));
+				
+				pt.execute();
+			}
+		
 		}
 		else if(!esta) {
 			System.out.println("No existe ese dni de cliente, porfavor registrese primero en el sistema");
