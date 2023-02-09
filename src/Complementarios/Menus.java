@@ -58,6 +58,8 @@ public class Menus {
 		System.out.println("--MENU HOTEL--");
 		System.out.println(ALTA_HOTEL+". Dar de alta en un hotel");
 		System.out.println(BAJA_HOTEL+". Dar de baja un hotel");
+		System.out.println(INSERTAR_HABITACION+". Insertar habitacion");
+		System.out.println(ELIMINAR_HABITACION+". Eliminar habitacion");
 		System.out.println(VER_HOTEL+". Enseñar un hotel");
 		System.out.println(VER_HOTELES+". Enseñar todos los hoteles");
 		System.out.println(SALIR+". Salir");

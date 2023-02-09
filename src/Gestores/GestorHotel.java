@@ -3,8 +3,6 @@ package Gestores;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import Clases.Habitacion;
-import Clases.Hotel;
 import ClasesGestor.GestorBBDD;
 import Complementarios.FormularioDeDatos;
 import Complementarios.Menus;
@@ -12,9 +10,7 @@ import Complementarios.Visor;
 
 public class GestorHotel {
 public static void run(Scanner sc) throws ClassNotFoundException, SQLException {
-		
 		GestorBBDD gest= new GestorBBDD();
-		Hotel hotel=new Hotel();
 		int id;
 		int opcion=0;
 		
@@ -25,8 +21,8 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException {
 			switch (opcion) {
 			case Menus.ALTA_HOTEL: 
 				gest.conectar();
-				hotel=FormularioDeDatos.datosHotel(sc);
-				gest.altaHotel(hotel, sc);
+		
+				gest.altaHotel(FormularioDeDatos.datosHotel(sc), sc);
 				System.out.println("Hotel dado de alta");
 				gest.cerrar();
 				break;
