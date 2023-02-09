@@ -21,7 +21,6 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException {
 			switch (opcion) {
 			case Menus.ALTA_HOTEL: 
 				gest.conectar();
-		
 				gest.altaHotel(FormularioDeDatos.datosHotel(sc), sc);
 				System.out.println("Hotel dado de alta");
 				gest.cerrar();
