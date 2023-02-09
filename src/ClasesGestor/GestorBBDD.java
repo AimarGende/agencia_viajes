@@ -119,7 +119,7 @@ public class GestorBBDD extends Conector{
 			pt.execute();
 		}
 		else if(!esta) {
-			System.out.println("No existe esa id de cliente, porfavor registrese primero en el sistema");
+			System.out.println("No existe ese dni de cliente, porfavor registrese primero en el sistema");
 		}
 		
 		

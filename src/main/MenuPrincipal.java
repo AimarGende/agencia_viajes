@@ -1,13 +1,14 @@
 package main;
 
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.Scanner;
 import Complementarios.Menus;
 import Gestores.*;
 
 public class MenuPrincipal {
 	
-	public static void run() throws ClassNotFoundException, SQLException {
+	public static void run() throws ClassNotFoundException, SQLException, ParseException {
 		Scanner sc=new Scanner(System.in);
 		int opcion=0;
 		
