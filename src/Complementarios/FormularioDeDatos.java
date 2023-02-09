@@ -34,7 +34,7 @@ public class FormularioDeDatos {
 		System.out.println("Introduce la id de la habitacion");
 		reserva.setId_habitacion(Integer.parseInt(sc.nextLine()));
 
-		System.out.println("Introduce el dni de la habitacion");
+		System.out.println("Introduce el dni del cliente");
 		reserva.setDni(sc.nextLine());
 		
 		System.out.println("Introduce cuando se hospedan los clientes con el siguiente formato  dia(dd)/mes(MM)");
@@ -66,6 +66,7 @@ public class FormularioDeDatos {
 
 		return hotel;
 	}
+	
 	public static Habitacion datosHabitacion(Scanner sc) {
 		Habitacion habitacion=new Habitacion();
 		
@@ -74,6 +75,24 @@ public class FormularioDeDatos {
 
 		System.out.println("Introduce el id del hotel de la habitacion");
 		habitacion.setId_hotel(Integer.parseInt(sc.nextLine()));
+
+		System.out.println("Introduce el numero de la habitacion");
+		habitacion.setNumero(sc.nextLine());
+
+		System.out.println("Introduce la descripcion de la habitacion");
+		habitacion.setDescripcion(sc.nextLine());
+		
+		System.out.println("Introduce el precio de la habitacion");
+		habitacion.setPrecio(Double.parseDouble(sc.nextLine()));
+		
+		return habitacion;
+	}
+	
+	public static Habitacion datosHabitacionSinHotel(Scanner sc) {
+		Habitacion habitacion=new Habitacion();
+		
+		System.out.println("Introduce el id de la habitacion");
+		habitacion.setId(Integer.parseInt(sc.nextLine()));
 
 		System.out.println("Introduce el numero de la habitacion");
 		habitacion.setNumero(sc.nextLine());
