@@ -22,6 +22,7 @@ public class Menus {
 	public static final int ELIMINAR_HABITACION=4;
 	public static final int VER_HOTEL=5;
 	public static final int VER_HOTELES=6;
+	public static final int VER_HABITACIONES_DE_HOTEL=7;
 	
 	public static final int SALIR=0;
 	
