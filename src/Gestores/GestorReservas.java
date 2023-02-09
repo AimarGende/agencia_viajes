@@ -8,12 +8,14 @@ import Clases.Reserva;
 import ClasesGestor.GestorBBDD;
 import Complementarios.FormularioDeDatos;
 import Complementarios.Menus;
+import Complementarios.Visor;
 
 public class GestorReservas {
 public static void run(Scanner sc) throws ClassNotFoundException, SQLException, ParseException {
 		
 		GestorBBDD gest= new GestorBBDD();
 		Reserva reserva= new Reserva();
+		int id=0;
 		int opcion=0;
 		
 		
@@ -30,8 +32,20 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException, 
 				break;
 			case Menus.ANULAR_RESERVA:
 				gest.conectar();
-				int id=FormularioDeDatos.pedirIdReserva(sc);
+				id=FormularioDeDatos.pedirIdReserva(sc);
 				gest.anularReserva(id);
+				gest.cerrar();
+				break;
+			case Menus.MOSTRAR_RESREVA_CLIENTE:
+				gest.conectar();
+				id=FormularioDeDatos.pedirIdReserva(sc);
+				reserva=gest.getReserva(id);
+				Visor.mostrarReserva(reserva);
+				gest.cerrar();
+				break;
+			case Menus.MOSTRAR_RESERVAS:
+				gest.conectar();
+				Visor.mostrarReservas(gest.getReservas());
 				gest.cerrar();
 				break;
 			default:
