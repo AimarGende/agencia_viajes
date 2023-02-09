@@ -17,6 +17,9 @@ public class Menus {
 	public static final int MOSTRAR_RESERVAS=4;
 	
 	public static final int ALTA_HOTEL=1;
+	public static final int BAJA_HOTEL=2;
+	public static final int VER_HOTEL=3;
+	public static final int VER_HOTELES=4;
 	
 	public static final int SALIR=0;
 	
@@ -51,7 +54,11 @@ public class Menus {
 	
 	public static void menuHotel() {
 		System.out.println("--MENU HOTEL--");
-		System.out.println(ALTA_HOTEL+". Darse de alta en un hotel");
+		System.out.println(ALTA_HOTEL+". Dar de alta en un hotel");
+		System.out.println(BAJA_HOTEL+". Dar de baja un hotel");
+		System.out.println(VER_HOTEL+". Enseñar un hotel");
+		System.out.println(VER_HOTELES+". Enseñar todos los hoteles");
+		System.out.println(SALIR+". Salir");
 		System.out.println("Escoja una opcion:");
 	}
 }
