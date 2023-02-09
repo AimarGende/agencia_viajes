@@ -30,11 +30,12 @@ public class Menus {
 	}
 	
 	public static void menuClientes() {
-		System.out.println("--MENU CLIETES--");
+		System.out.println("--MENU CLIENTES--");
 		System.out.println(REGISTRAR_CLIENTE+". Registrar clientes");
 		System.out.println(BORRAR_CLIENTE+". Borrar clientes");
 		System.out.println(BUSCAR_CLIENTE+". Buscar cliente");
 		System.out.println(MOSTRAR_CLIENTES+". Mostrar clientes");
+		System.out.println(SALIR+". Salir");
 		System.out.println("Escoja una opcion:");
 	}
 
@@ -42,6 +43,9 @@ public class Menus {
 		System.out.println("--MENU RESERVAS--");
 		System.out.println(REALIZAR_RESERVA+". Realizar reserva");
 		System.out.println(ANULAR_RESERVA+". Anular reserva");
+		System.out.println(MOSTRAR_RESREVA_CLIENTE+". Mostrar reserva de cliente");
+		System.out.println(MOSTRAR_RESERVAS+". Mostrar reservas");
+		System.out.println(SALIR+". Salir");
 		System.out.println("Escoja una opcion:");
 	}
 	
