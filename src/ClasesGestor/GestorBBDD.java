@@ -227,12 +227,50 @@ public class GestorBBDD extends Conector{
 		
 		return id;
 	}
-	public Hotel getHotel(int id) {
-		return null;
+	public Hotel getHotel(int id) throws SQLException {
+		
+		sentencia="SELECT * FROM hoteles WHERE id=?";
+		
+		pt=getCon().prepareStatement(sentencia);
+		pt.setInt(1, id);
+		
+		ResultSet result= pt.executeQuery();
+		
+		result.next();
+		
+		Hotel hotel =new Hotel();
+		
+		hotel.setId(result.getInt("id"));
+		hotel.setCif(result.getString("cif"));
+		hotel.setNombre(result.getString("gerente"));
+		hotel.setEstrellas(result.getInt("estrellas"));
+		hotel.setCompania(result.getString("compania"));
+		
+		
+		return hotel;
 	}
 	
-	public ArrayList<Hotel> getHoteles() {
-		return null;
+	public ArrayList<Hotel> getHoteles() throws SQLException {
+		ArrayList<Hotel> hoteles=new ArrayList<Hotel>();
+		
+		sentencia="SELECT * FROM hoteles";
+		
+		pt=getCon().prepareStatement(sentencia);
+		
+		ResultSet result= pt.executeQuery();
+	
+		while(result.next()) {
+		Hotel hotel =new Hotel();
+		
+		hotel.setId(result.getInt("id"));
+		hotel.setCif(result.getString("cif"));
+		hotel.setNombre(result.getString("gerente"));
+		hotel.setEstrellas(result.getInt("estrellas"));
+		hotel.setCompania(result.getString("compania"));
+		
+		hoteles.add(hotel);
+		}
+		return hoteles;
 	}
 // Gestor habitaciones---------------------------------------------------
 	
