@@ -105,11 +105,11 @@ public class GestorBBDD extends Conector{
 		
 		if(esta) {
 			id_hotel=FormularioDeDatos.pedirIdHotel(sc);
-			Visor.mostrarHabitaciones(getHabitacionesPorHotel(id_hotel));
-			if(getHabitacionesPorHotel(id_hotel).equals(null)) {
+			if(getHabitacionesPorHotel(id_hotel).size()==0) {
 				System.out.println("No existen habitaciones para este hotel");
 			}
 			else {
+				Visor.mostrarHabitaciones(getHabitacionesPorHotel(id_hotel));
 				reserva=FormularioDeDatos.datosReserva(sc);
 				
 				sentencia="INSERT INTO reservas (id_habitacion, dni, desde, hasta) VALUES(?,?,?,?)";
