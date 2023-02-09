@@ -133,17 +133,101 @@ public class GestorBBDD extends Conector{
 		
 	}
 	
-	public Reserva getReserva(int id) {
+	public Reserva getReserva(int id) throws SQLException {
+		Reserva reserva=new Reserva();
 		
-		return null;
+		sentencia="SELECT * FROM reservas WHERE id=?";
+		pt=getCon().prepareStatement(sentencia);
+		pt.setInt(1, id);
+		
+		ResultSet result=pt.executeQuery();
+		
+		result.next();
+		reserva.setId(result.getInt("id"));
+		reserva.setId_habitacion(result.getInt("id_habitacion"));
+		reserva.setDni(result.getString("dni"));
+		reserva.setDesde(result.getDate("desde"));
+		reserva.setHasta(result.getDate("hasta"));
+		
+		return reserva;
 	}
 	
-	public ArrayList<Reserva> getReservas(){
-		return null;
+	public ArrayList<Reserva> getReservas() throws SQLException{
+		ArrayList<Reserva> reservas=new ArrayList<Reserva>();
+		
+		sentencia="SELECT * FROM reservas";
+		pt=getCon().prepareStatement(sentencia);
+		
+		ResultSet result=pt.executeQuery();
+		
+		while(result.next()) {
+			Reserva reserva=new Reserva();
+			
+			reserva.setId(result.getInt("id"));
+			reserva.setId_habitacion(result.getInt("id_habitacion"));
+			reserva.setDni(result.getString("dni"));
+			reserva.setDesde(result.getDate("desde"));
+			reserva.setHasta(result.getDate("hasta"));
+			
+			reservas.add(reserva);
+		}
+		
+		return reservas;
 	}
 // Gestor de hoteles-----------------------------------------------------
+		
+	public void altaHotel(Hotel hotel, Scanner sc) throws SQLException {
+		String opcion="";
+		
+		sentencia="INSERT INTO hoteles (cif, nombre, gerente, estrellas, compania) VALUES(?,?,?,?,?)";
+		
+		pt=getCon().prepareStatement(sentencia);
+		
+		pt.setString(1, hotel.getCif());
+		pt.setString(2, hotel.getNombre());
+		pt.setString(3, hotel.getGerente());
+		pt.setInt(4, hotel.getEstrellas());
+		pt.setString(5, hotel.getCompania());
+		
+		pt.execute();
+		
+		do {
+			System.out.println("Quiere insertar una habitacion?, introduzca 'si' si quiere introducir una habitacion y 'no' si quiere salir del programa");
+			opcion=sc.nextLine().toLowerCase();
+			
+			if(opcion.equals("si")) {
+				Habitacion habitacion= new Habitacion();
+				habitacion=FormularioDeDatos.datosHabitacionSinHotel(sc);
+				habitacion.setId_hotel(maxIdHotel());
+				insertarHabitacion(habitacion);
+			}
+			else if(opcion.equals("no")){
+				System.out.println("Volviendo al menu principal...");	
+			}
+			else {
+				System.out.println("Opcion equivocada, vuelva a insetar el valor");
+			}
+			
+			
+		}
+		while(!opcion.equals("no"));
+	}
 	
-	public Habitacion getHotel(int id) {
+	public int maxIdHotel() throws SQLException {
+		int id=0;
+		sentencia="SELECT MAX(id) FROM hoteles";
+		
+		pt=getCon().prepareStatement(sentencia);
+		ResultSet result=pt.executeQuery();
+		
+		
+		if(result.next()) {
+			id=result.getInt(1);
+		}
+		
+		return id;
+	}
+	public Hotel getHotel(int id) {
 		return null;
 	}
 	
@@ -151,6 +235,21 @@ public class GestorBBDD extends Conector{
 		return null;
 	}
 // Gestor habitaciones---------------------------------------------------
+	
+	public void insertarHabitacion(Habitacion habitacion) throws SQLException {
+		sentencia="INSERT INTO habitaciones VALUES(?,?,?,?,?) ";
+		
+		pt=getCon().prepareStatement(sentencia);
+		
+		pt.setInt(1, habitacion.getId());
+		pt.setInt(2, habitacion.getId_hotel());
+		pt.setString(3, habitacion.getNumero());
+		pt.setString(4, habitacion.getDescripcion());
+		pt.setDouble(5, habitacion.getPrecio());
+		
+		pt.execute();
+		
+	}
 	
 	public Habitacion getHabitacion(int id, int id_hotel) throws SQLException {
 		Habitacion habitacion=new Habitacion();
