@@ -41,7 +41,7 @@ public class FormularioDeDatos {
 		reserva.setDesde(fecha.parse(sc.nextLine()));
 
 		System.out.println("Introduce cuando se van los clientes con el siguiente formato  dia(dd)/mes(MM)");
-		reserva.setHasta(fecha.parse(sc.nextLine()));
+		reserva.setHasta(fecha.parse(sc.nextLine())); 
 		
 		return reserva;
 	}
