@@ -253,7 +253,8 @@ public class GestorBBDD extends Conector{
 		
 		hotel.setId(result.getInt("id"));
 		hotel.setCif(result.getString("cif"));
-		hotel.setNombre(result.getString("gerente"));
+		hotel.setNombre(result.getString("nombre"));
+		hotel.setGerente(result.getString("gerente"));
 		hotel.setEstrellas(result.getInt("estrellas"));
 		hotel.setCompania(result.getString("compania"));
 		
@@ -275,7 +276,8 @@ public class GestorBBDD extends Conector{
 		
 		hotel.setId(result.getInt("id"));
 		hotel.setCif(result.getString("cif"));
-		hotel.setNombre(result.getString("gerente"));
+		hotel.setNombre(result.getString("nombre"));
+		hotel.setGerente(result.getString("gerente"));
 		hotel.setEstrellas(result.getInt("estrellas"));
 		hotel.setCompania(result.getString("compania"));
 		

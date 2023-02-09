@@ -37,11 +37,13 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException {
 				gest.conectar();
 				gest.insertarHabitacion(FormularioDeDatos.datosHabitacion(sc));
 				gest.cerrar();
+				System.out.println("Habitacion insertada");
 				break;
 			case Menus.ELIMINAR_HABITACION:
 				gest.conectar();
 				gest.eliminarHabitacion(FormularioDeDatos.pedirIdHabitacion(sc));
 				gest.cerrar();
+				System.out.println("Habitacion eliminada");
 				break;
 			case Menus.VER_HOTEL:
 				gest.conectar();
@@ -53,6 +55,10 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException {
 				Visor.mostrarHoteles(gest.getHoteles());
 				gest.cerrar();
 				break;
+			case Menus.VER_HABITACIONES_DE_HOTEL:
+				gest.conectar();
+				Visor.mostrarHabitaciones(gest.getHabitacionesPorHotel(FormularioDeDatos.pedirIdHotel(sc)));
+				gest.cerrar();
 			default:
 				System.out.println("La opcion no es valida");
 			}
