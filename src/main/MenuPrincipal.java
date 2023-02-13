@@ -25,6 +25,7 @@ public class MenuPrincipal {
 				case Menus.GESTION_HOTELES:
 					GestorHotel.run(sc);
 					break;
+				case Menus.SALIR:
 				default:
 					System.out.println("Opcion equivocada");
 					break;
