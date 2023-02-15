@@ -68,11 +68,14 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException, 
 				Visor.mostrarReservas(gest.getReservasFecha(new Date(FormularioDeDatos.pedirDesde(sc).getTime()), new Date(FormularioDeDatos.pedirHasta(sc).getTime())));
 				gest.cerrar();
 				break;
+			case Menus.SALIR:
+				System.out.println("Saliendo del menu");
+				break;
 			default:
 				System.out.println("La opcion no es valida");
 			}
 			
 		}while(opcion!=Menus.SALIR);
-		System.out.println("Saliendo del menu");
+		
 	}
 }
