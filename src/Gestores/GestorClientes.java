@@ -56,6 +56,11 @@ public class GestorClientes {
 				Visor.mostrarClientes(ordenarClienteApellidos(gest.getClientes()));
 				gest.cerrar();
 				break;
+			case Menus.CONTIENE:
+				gest.conectar();
+				Visor.mostrarClientes(gest.getClientesCadena(FormularioDeDatos.devuelveCadena(sc).toUpperCase()));
+				gest.cerrar();
+				break;
 			default:
 				System.out.println("La opcion no es valida");
 			}

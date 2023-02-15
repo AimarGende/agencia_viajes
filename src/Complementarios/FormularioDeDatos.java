@@ -2,6 +2,7 @@ package Complementarios;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 import Clases.*;
@@ -132,5 +133,26 @@ public class FormularioDeDatos {
 		System.out.println("Introduce el id de la reserva:");
 		id=Integer.parseInt(sc.nextLine());
 		return id;
+	}
+	public static String devuelveCadena(Scanner sc) {
+		String cadena;
+		System.out.println("Introduce la cadena que quieres buscar:");
+		cadena=sc.nextLine();
+		return cadena;
+	}
+	public static Date pedirDesde(Scanner sc) throws ParseException {
+		SimpleDateFormat fecha=new SimpleDateFormat("dd/MM");
+		Date date;
+		System.out.println("Introduce la fecha desde que quieres ver las reservas");
+		date=fecha.parse(sc.nextLine());
+		return date;
+	}
+	
+	public static Date pedirHasta(Scanner sc) throws ParseException {
+		SimpleDateFormat fecha=new SimpleDateFormat("dd/MM");
+		Date date;
+		System.out.println("Introduce la fecha de cuando acaban las reservas");
+		date=fecha.parse(sc.nextLine());
+		return date;
 	}
 }
