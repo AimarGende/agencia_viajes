@@ -3,7 +3,7 @@ package Gestores;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import Ordenacion.*;
 import Clases.Cliente;
 import Complementarios.*;
 import ClasesGestor.*;
@@ -46,12 +46,34 @@ public class GestorClientes {
 				Visor.mostrarClientes(clientes);
 				gest.cerrar();
 				break;
+			case Menus.ORDENAR_POR_NOMBRE:
+				gest.conectar();
+				Visor.mostrarClientes(ordenarClienteNombre(gest.getClientes()));
+				gest.cerrar();
+				break;
+			case Menus.ORDENAR_POR_APELLIDO:
+				gest.conectar();
+				Visor.mostrarClientes(ordenarClienteApellidos(gest.getClientes()));
+				gest.cerrar();
+				break;
 			default:
 				System.out.println("La opcion no es valida");
 			}
 			
 		}while(opcion!=Menus.SALIR);
 		System.out.println("Saliendo del menu");
+	}
+	
+	private static ArrayList<Cliente> ordenarClienteNombre(ArrayList<Cliente> clientes) {
+		OrdenarClientesPorNombre order= new OrdenarClientesPorNombre();
+		clientes.sort(order);
+		return clientes;
+	}
+	
+	private static ArrayList<Cliente> ordenarClienteApellidos(ArrayList<Cliente> clientes) {
+		OrdenarClientesPorApellido order= new OrdenarClientesPorApellido();
+		clientes.sort(order);
+		return clientes;
 	}
 
 }
