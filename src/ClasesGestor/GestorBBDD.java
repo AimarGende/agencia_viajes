@@ -83,7 +83,26 @@ public class GestorBBDD extends Conector{
 		return clientes;
 	}
 	
-
+	public ArrayList<Cliente> getClientesCadena(String cadena) throws SQLException{
+		ArrayList<Cliente> clientes= new ArrayList<Cliente>();
+		cadena="%"+cadena+"%";
+		pt=getCon().prepareStatement("SELECT * FROM clientes WHERE nombre LIKE ? OR apellidos LIKE ?");
+		pt.setString(1, cadena);
+		pt.setString(2, cadena);
+		ResultSet result=pt.executeQuery();
+		while(result.next()) {
+			Cliente cliente = new Cliente();
+			
+			cliente.setDni(result.getString("dni"));
+			cliente.setNombre(result.getString("nombre"));
+			cliente.setApellidos(result.getString("apellidos"));
+			cliente.setDireccion(result.getString("direccion"));
+			cliente.setLocalidad(result.getString("localidad"));
+			
+			clientes.add(cliente);
+		}
+		return clientes;
+	}
 	
 // Gestor reservas-------------------------------------------------------
 	public boolean comprobarCliente(String dni) throws SQLException {
@@ -159,6 +178,28 @@ public class GestorBBDD extends Conector{
 		
 		return reserva;
 	}
+	public ArrayList<Reserva> getReservasCliente(String dni) throws SQLException {
+		ArrayList<Reserva> reservas=new ArrayList<Reserva>();
+		sentencia="SELECT * FROM reservas WHERE dni=?";
+		pt=getCon().prepareStatement(sentencia);
+		pt.setString(1, dni);
+		
+		ResultSet result=pt.executeQuery();
+		
+		while(result.next()) {
+			Reserva reserva=new Reserva();
+			
+			reserva.setId(result.getInt("id"));
+			reserva.setId_habitacion(result.getInt("id_habitacion"));
+			reserva.setDni(result.getString("dni"));
+			reserva.setDesde(result.getDate("desde"));
+			reserva.setHasta(result.getDate("hasta"));
+			
+			reservas.add(reserva);
+		}
+		
+		return reservas;
+	}
 	
 	public ArrayList<Reserva> getReservas() throws SQLException{
 		ArrayList<Reserva> reservas=new ArrayList<Reserva>();
@@ -182,6 +223,30 @@ public class GestorBBDD extends Conector{
 		
 		return reservas;
 	}
+	
+	public ArrayList<Reserva> getReservasFecha( Date desde, Date hasta) throws SQLException{
+		ArrayList<Reserva> reservas=new ArrayList<Reserva>();
+		
+		sentencia="SELECT * FROM reservas WHERE desde>? AND hasta<?";
+		pt=getCon().prepareStatement(sentencia);
+		pt.setDate(1, desde);
+		pt.setDate(2, hasta);
+		ResultSet result=pt.executeQuery();
+		
+		while(result.next()) {
+			Reserva reserva=new Reserva();
+			reserva.setId(result.getInt("id"));
+			reserva.setId_habitacion(result.getInt("id_habitacion"));
+			reserva.setDni(result.getString("dni"));
+			reserva.setDesde(result.getDate("desde"));
+			reserva.setHasta(result.getDate("hasta"));
+			
+			reservas.add(reserva);
+		}
+		
+		return reservas;
+	}
+
 // Gestor de hoteles-----------------------------------------------------
 		
 	public void altaHotel(Hotel hotel, Scanner sc) throws SQLException {

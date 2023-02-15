@@ -16,11 +16,13 @@ public class Menus {
 	public static final int MOSTRAR_CLIENTES=4;
 	public static final int ORDENAR_POR_NOMBRE=5;
 	public static final int ORDENAR_POR_APELLIDO=6;
+	public static final int CONTIENE=7;
 	
 	public static final int REALIZAR_RESERVA=1;
 	public static final int ANULAR_RESERVA=2;
 	public static final int MOSTRAR_RESREVA_CLIENTE=3;
 	public static final int MOSTRAR_RESERVAS=4;
+	public static final int CONSULTAR_FECHAS=5;
 	
 	public static final int ALTA_HOTEL=1;
 	public static final int BAJA_HOTEL=2;
@@ -49,6 +51,7 @@ public class Menus {
 		System.out.println(MOSTRAR_CLIENTES+". Mostrar clientes");
 		System.out.println(ORDENAR_POR_NOMBRE+". Ordenar clientes por nombre");
 		System.out.println(ORDENAR_POR_APELLIDO+". Ordenar clientes por apellidos");
+		System.out.println(CONTIENE+". introducir una cadena y enseñar todos los clientes que la contengan");
 		System.out.println(SALIR+". Salir");
 		System.out.println("Escoja una opcion:");
 	}
@@ -59,6 +62,7 @@ public class Menus {
 		System.out.println(ANULAR_RESERVA+". Anular reserva");
 		System.out.println(MOSTRAR_RESREVA_CLIENTE+". Mostrar reserva de cliente");
 		System.out.println(MOSTRAR_RESERVAS+". Mostrar reservas");
+		System.out.println(CONSULTAR_FECHAS+". consultar resevas entre fechas");
 		System.out.println(SALIR+". Salir");
 		System.out.println("Escoja una opcion:");
 	}

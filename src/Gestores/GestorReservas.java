@@ -1,5 +1,6 @@
 package Gestores;
 
+import java.sql.Date;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Scanner;
@@ -60,6 +61,11 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException, 
 			case Menus.MOSTRAR_RESERVAS:
 				gest.conectar();
 				Visor.mostrarReservas(gest.getReservas());
+				gest.cerrar();
+				break;
+			case Menus.CONSULTAR_FECHAS:
+				gest.conectar();
+				Visor.mostrarReservas(gest.getReservasFecha(new Date(FormularioDeDatos.pedirDesde(sc).getTime()), new Date(FormularioDeDatos.pedirHasta(sc).getTime())));
 				gest.cerrar();
 				break;
 			default:
