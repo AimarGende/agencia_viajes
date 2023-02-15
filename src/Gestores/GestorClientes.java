@@ -61,12 +61,14 @@ public class GestorClientes {
 				Visor.mostrarClientes(gest.getClientesCadena(FormularioDeDatos.devuelveCadena(sc).toUpperCase()));
 				gest.cerrar();
 				break;
+			case Menus.SALIR:
+				System.out.println("Saliendo del menu");
+				break;
 			default:
 				System.out.println("La opcion no es valida");
 			}
 			
 		}while(opcion!=Menus.SALIR);
-		System.out.println("Saliendo del menu");
 	}
 	
 	private static ArrayList<Cliente> ordenarClienteNombre(ArrayList<Cliente> clientes) {

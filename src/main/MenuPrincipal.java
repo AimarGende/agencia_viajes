@@ -26,13 +26,15 @@ public class MenuPrincipal {
 					GestorHotel.run(sc);
 					break;
 				case Menus.SALIR:
+					System.out.println("Gracias por usar nuestra aplicacion!");
+					break;
 				default:
 					System.out.println("Opcion equivocada");
 					break;
 			}
 		}while(opcion!=Menus.SALIR);
 		
-		System.out.println("Gracias por usar nuestra aplicacion!");
+		
 	}
 
 }

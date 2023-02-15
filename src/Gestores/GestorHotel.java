@@ -58,11 +58,13 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException {
 				gest.conectar();
 				Visor.mostrarHabitaciones(gest.getHabitacionesPorHotel(FormularioDeDatos.pedirIdHotel(sc)));
 				gest.cerrar();
+			case Menus.SALIR:
+				System.out.println("Saliendo del menu");
+				break;
 			default:
 				System.out.println("La opcion no es valida");
 			}
 			
 		}while(opcion!=Menus.SALIR);
-		System.out.println("Saliendo del menu");
 	}
 }
