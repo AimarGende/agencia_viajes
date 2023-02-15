@@ -1,9 +1,6 @@
 package Ordenacion;
-
 import java.util.Comparator;
-
 import Clases.Cliente;
-
 
 public class OrdenarClientesPorApellido implements Comparator<Cliente>{
 
