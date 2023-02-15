@@ -14,6 +14,8 @@ public class Menus {
 	public static final int BORRAR_CLIENTE=2;
 	public static final int BUSCAR_CLIENTE=3;
 	public static final int MOSTRAR_CLIENTES=4;
+	public static final int ORDENAR_POR_NOMBRE=5;
+	public static final int ORDENAR_POR_APELLIDO=6;
 	
 	public static final int REALIZAR_RESERVA=1;
 	public static final int ANULAR_RESERVA=2;
@@ -45,6 +47,8 @@ public class Menus {
 		System.out.println(BORRAR_CLIENTE+". Borrar clientes");
 		System.out.println(BUSCAR_CLIENTE+". Buscar cliente");
 		System.out.println(MOSTRAR_CLIENTES+". Mostrar clientes");
+		System.out.println(ORDENAR_POR_NOMBRE+". Ordenar clientes por nombre");
+		System.out.println(ORDENAR_POR_APELLIDO+". Ordenar clientes por apellidos");
 		System.out.println(SALIR+". Salir");
 		System.out.println("Escoja una opcion:");
 	}
