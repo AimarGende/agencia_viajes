@@ -174,4 +174,11 @@ public class FormularioDeDatos {
 		usuario=sc.nextLine();
 		return usuario;
 	}
+	
+	public static String pedirContraseña(Scanner sc) {
+		String contraseña;
+		System.out.println("Introduce la nueva contraseña");
+		contraseña=sc.nextLine();
+		return contraseña;
+	}
 }

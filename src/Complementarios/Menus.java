@@ -36,6 +36,8 @@ public class Menus {
 	public static final int INSERTAR_USUARIO=1;
 	public static final int ELIMINAR_USUARIO=2;
 	public static final int CAMBIAR_CONTRASEÑA=3;
+	public static final int VER_USUARIO=4;
+	public static final int VER_USUARIOS=5;
 	
 	public static final int SALIR=0;
 	
@@ -89,6 +91,8 @@ public class Menus {
 		System.out.println(INSERTAR_USUARIO+". insertar usuario");
 		System.out.println(ELIMINAR_USUARIO+". eliminar usuario");
 		System.out.println(CAMBIAR_CONTRASEÑA+". cambiar contraseña");
+		System.out.println(VER_USUARIO+". ver un usuario en concreto");
+		System.out.println(VER_USUARIOS+". ver todos los usuarios");
 		System.out.println(SALIR+". Salir");
 		System.out.println("Escoja una opcion:");
 	}
