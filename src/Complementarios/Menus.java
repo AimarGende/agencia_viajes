@@ -32,6 +32,10 @@ public class Menus {
 	public static final int VER_HOTELES=6;
 	public static final int VER_HABITACIONES_DE_HOTEL=7;
 	
+	public static final int INSERTAR_USUARIO=1;
+	public static final int ELIMINAR_USUARIO=2;
+	public static final int CAMBIAR_CONTRASEÑA=3;
+	
 	public static final int SALIR=0;
 	
 	public static void menuPrincipal() {
@@ -75,6 +79,15 @@ public class Menus {
 		System.out.println(ELIMINAR_HABITACION+". Eliminar habitacion");
 		System.out.println(VER_HOTEL+". Enseñar un hotel");
 		System.out.println(VER_HOTELES+". Enseñar todos los hoteles");
+		System.out.println(SALIR+". Salir");
+		System.out.println("Escoja una opcion:");
+	}
+	
+	public static void menuUsuarios() {
+		System.out.println("--MENU USUARIOS--");
+		System.out.println(INSERTAR_USUARIO+". insertar usuario");
+		System.out.println(ELIMINAR_USUARIO+". eliminar usuario");
+		System.out.println(CAMBIAR_CONTRASEÑA+". cambiar contraseña");
 		System.out.println(SALIR+". Salir");
 		System.out.println("Escoja una opcion:");
 	}

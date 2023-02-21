@@ -13,7 +13,6 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException {
 		GestorBBDD gest= new GestorBBDD();
 		int id;
 		int opcion=0;
-		
 		do {
 			Menus.menuHotel();
 			opcion=Integer.parseInt(sc.nextLine());
@@ -45,8 +44,11 @@ public static void run(Scanner sc) throws ClassNotFoundException, SQLException {
 				System.out.println("Habitacion eliminada");
 				break;
 			case Menus.VER_HOTEL:
+				id=FormularioDeDatos.pedirIdHotel(sc);
 				gest.conectar();
-				Visor.mostrarHotel(gest.getHotel(FormularioDeDatos.pedirIdHotel(sc)));
+				Visor.mostrarHotel(gest.getHotel(id));
+				System.out.println("--------------Habitaciones--------------");
+				Visor.mostrarHabitaciones(gest.getHabitacionesPorHotel(id));
 				gest.cerrar();
 				break;
 			case Menus.VER_HOTELES:

@@ -331,7 +331,6 @@ public class GestorBBDD extends Conector{
 		hotel.setEstrellas(result.getInt("estrellas"));
 		hotel.setCompania(result.getString("compania"));
 		
-		
 		return hotel;
 	}
 	

@@ -143,7 +143,7 @@ public class FormularioDeDatos {
 	public static Date pedirDesde(Scanner sc) throws ParseException {
 		SimpleDateFormat fecha=new SimpleDateFormat("dd/MM");
 		Date date;
-		System.out.println("Introduce la fecha desde que quieres ver las reservas");
+		System.out.println("Introduce la fecha desde que quieres ver las reservas con el siguiente formato (dia(dd)/mes(MM))");
 		date=fecha.parse(sc.nextLine());
 		return date;
 	}
@@ -151,7 +151,7 @@ public class FormularioDeDatos {
 	public static Date pedirHasta(Scanner sc) throws ParseException {
 		SimpleDateFormat fecha=new SimpleDateFormat("dd/MM");
 		Date date;
-		System.out.println("Introduce la fecha de cuando acaban las reservas");
+		System.out.println("Introduce la fecha de cuando acaban las reservas con el siguiente formato (dia(dd)/mes(MM))");
 		date=fecha.parse(sc.nextLine());
 		return date;
 	}
