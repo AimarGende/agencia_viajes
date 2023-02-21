@@ -107,6 +107,18 @@ public class FormularioDeDatos {
 		return habitacion;
 	}
 	
+	public static Usuario datosUsuario(Scanner sc) {
+		Usuario usuario=new Usuario();
+		
+		System.out.println("Introduce el usuario que quieras: ");
+		usuario.setUsuario(sc.nextLine());
+		
+		System.out.println("Introduce la contraseña: ");
+		usuario.setContraseña(sc.nextLine());
+		
+		return usuario;
+	}
+	
 	public static String pedirDniCliente(Scanner sc) {
 		String dni;
 		System.out.println("Introduce el dni del cliente:");
@@ -154,5 +166,12 @@ public class FormularioDeDatos {
 		System.out.println("Introduce la fecha de cuando acaban las reservas con el siguiente formato (dia(dd)/mes(MM))");
 		date=fecha.parse(sc.nextLine());
 		return date;
+	}
+	
+	public static String pedirUsuario(Scanner sc) {
+		String usuario;
+		System.out.println("Introduce el usuario");
+		usuario=sc.nextLine();
+		return usuario;
 	}
 }

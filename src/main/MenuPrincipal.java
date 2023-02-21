@@ -25,6 +25,9 @@ public class MenuPrincipal {
 				case Menus.GESTION_HOTELES:
 					GestorHotel.run(sc);
 					break;
+				case Menus.GESTION_USUARIOS:
+					GestorUsuarios.run(sc);
+					break;
 				case Menus.SALIR:
 					System.out.println("Gracias por usar nuestra aplicacion!");
 					break;

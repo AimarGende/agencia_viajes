@@ -9,6 +9,7 @@ public class Menus {
 	public static final int GESTION_CLIENTES=1;
 	public static final int GESTION_RESERVAS=2;
 	public static final int GESTION_HOTELES=3;
+	public static final int GESTION_USUARIOS=4;
 	
 	public static final int REGISTRAR_CLIENTE=1;
 	public static final int BORRAR_CLIENTE=2;
