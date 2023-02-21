@@ -9,6 +9,7 @@ public class Menus {
 	public static final int GESTION_CLIENTES=1;
 	public static final int GESTION_RESERVAS=2;
 	public static final int GESTION_HOTELES=3;
+	public static final int GESTION_USUARIOS=4;
 	
 	public static final int REGISTRAR_CLIENTE=1;
 	public static final int BORRAR_CLIENTE=2;
@@ -35,6 +36,8 @@ public class Menus {
 	public static final int INSERTAR_USUARIO=1;
 	public static final int ELIMINAR_USUARIO=2;
 	public static final int CAMBIAR_CONTRASEÑA=3;
+	public static final int VER_USUARIO=4;
+	public static final int VER_USUARIOS=5;
 	
 	public static final int SALIR=0;
 	
@@ -43,6 +46,7 @@ public class Menus {
 		System.out.println(GESTION_CLIENTES+". Gestionar clientes");
 		System.out.println( GESTION_RESERVAS+". Gestionar reservas");
 		System.out.println(GESTION_HOTELES+". Gestionar hoteles");
+		System.out.println(GESTION_USUARIOS+". Gestionar usuarios");
 		System.out.println(SALIR+". Salir");
 		System.out.println("Escoja una opcion:");
 	}
@@ -88,6 +92,8 @@ public class Menus {
 		System.out.println(INSERTAR_USUARIO+". insertar usuario");
 		System.out.println(ELIMINAR_USUARIO+". eliminar usuario");
 		System.out.println(CAMBIAR_CONTRASEÑA+". cambiar contraseña");
+		System.out.println(VER_USUARIO+". ver un usuario en concreto");
+		System.out.println(VER_USUARIOS+". ver todos los usuarios");
 		System.out.println(SALIR+". Salir");
 		System.out.println("Escoja una opcion:");
 	}

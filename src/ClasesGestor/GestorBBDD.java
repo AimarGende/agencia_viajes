@@ -454,4 +454,109 @@ public class GestorBBDD extends Conector{
 		
 		return habitaciones;
 	}
+// Gestor Usuarios---------------------------------------------------
+	
+	public void insertarUsuario(Usuario usuario) {
+		sentencia="INSERT INTO usuarios (Usuario,Contrasena) VALUES (?,?)";
+		try {
+		pt=getCon().prepareStatement(sentencia);
+		
+		pt.setString(1, usuario.getUsuario());
+		pt.setString(2, usuario.getContraseña());
+		
+		pt.execute();
+		}
+		catch(Exception e) {
+			
+		}
+	}
+	
+	public void eliminarUsuario(String usuario) {
+		sentencia="DELETE FROM usuarios WHERE Usuario=?";
+		try {
+		pt=getCon().prepareStatement(sentencia);
+		
+		pt.setString(1, usuario);
+		
+		pt.execute();
+	
+		}
+		catch(Exception e) {
+			
+		}
+	}
+	
+	public void modificarContraseña(String usuario, String contraseña) {
+		sentencia="UPDATE usuarios SET Contrasena=? WHERE Usuario=?";
+		
+		try {
+			pt=getCon().prepareStatement(sentencia);
+			
+			pt.setString(1, contraseña);
+			pt.setString(2, usuario);
+			
+			pt.executeUpdate();
+		}catch(Exception e) {
+		
+		}
+
+		
+	}
+	
+	public Usuario getUsuario(String usuario) {
+		Usuario usu= new Usuario();
+		sentencia="SELECT * FROM usuarios WHERE Usuario=?";
+		
+		
+		
+		try {
+			pt=getCon().prepareStatement(sentencia);
+			
+			pt.setString(1, usuario);
+			
+			ResultSet result=pt.executeQuery();
+			result.next();
+			try {
+				usu.setUsuario(result.getString("Usuario"));
+				usu.setContraseña(result.getString("Contrasena"));
+			}catch(Exception e) {
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return usu;
+	}
+	
+	public ArrayList<Usuario> getUsuarios() {
+		ArrayList<Usuario> usuarios= new ArrayList<Usuario>();
+		
+		sentencia="SELECT * FROM usuarios";
+		
+		
+		
+		try {
+			
+			pt=getCon().prepareStatement(sentencia);
+			
+			
+			ResultSet result=pt.executeQuery();
+			
+			while(result.next()) {
+				Usuario usu= new Usuario();
+
+				usu.setUsuario(result.getString("Usuario"));
+				usu.setContraseña(result.getString("Contrasena"));
+				
+				usuarios.add(usu);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return usuarios;
+	}
 }

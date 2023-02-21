@@ -46,4 +46,17 @@ public class Visor {
 	}
 	
 	
+	
+	public static void mostrarUsuario(Usuario usu) {
+		System.out.println(usu);
+	}
+	
+	public static void mostrarUsuarios(ArrayList<Usuario> usuarios) {
+		for (Usuario usuario : usuarios) {
+			System.out.println(usuario);
+		}
+	}
+
+	
+	
 }
