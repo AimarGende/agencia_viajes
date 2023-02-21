@@ -40,7 +40,7 @@ public class GestorUsuarios {
 				case Menus.VER_USUARIO:
 					gest.conectar();
 					usu=gest.getUsuario(FormularioDeDatos.pedirUsuario(sc));
-					if(usu.equals(null))
+					if(usu.equals(null)==false)
 						System.out.println("El usuario no existe");
 					else
 						Visor.mostrarUsuario(usu);

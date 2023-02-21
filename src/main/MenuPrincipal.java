@@ -19,13 +19,13 @@ public class MenuPrincipal {
 		int opcion=0;
 		boolean esta=false;
 		
-//		do {
-//			Usuario usu=new Usuario();
-//			
-//			usu=insertarUsuario(sc);
-//			
-//			esta=comprobarUsuario(usu);
-//		}while(!esta);
+		do {
+			Usuario usu=new Usuario();
+			
+			usu=insertarUsuario(sc);
+			
+			esta=comprobarUsuario(usu);
+		}while(!esta);
 		
 		do {
 			Menus.menuPrincipal();
