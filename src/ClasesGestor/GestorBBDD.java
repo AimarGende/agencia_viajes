@@ -516,9 +516,13 @@ public class GestorBBDD extends Conector{
 			
 			ResultSet result=pt.executeQuery();
 			result.next();
-			
-			usu.setUsuario(result.getString("Usuario"));
-			usu.setContraseña(result.getString("Contrasena"));
+			try {
+				usu.setUsuario(result.getString("Usuario"));
+				usu.setContraseña(result.getString("Contrasena"));
+			}catch(Exception e) {
+
+			}
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

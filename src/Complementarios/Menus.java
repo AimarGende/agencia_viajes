@@ -46,6 +46,7 @@ public class Menus {
 		System.out.println(GESTION_CLIENTES+". Gestionar clientes");
 		System.out.println( GESTION_RESERVAS+". Gestionar reservas");
 		System.out.println(GESTION_HOTELES+". Gestionar hoteles");
+		System.out.println(GESTION_USUARIOS+". Gestionar usuarios");
 		System.out.println(SALIR+". Salir");
 		System.out.println("Escoja una opcion:");
 	}

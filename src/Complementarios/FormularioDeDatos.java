@@ -119,6 +119,18 @@ public class FormularioDeDatos {
 		return usuario;
 	}
 	
+	public static Usuario inicioSesion(Scanner sc) {
+		Usuario usuario=new Usuario();
+		
+		System.out.println("Introduce tu usuario: ");
+		usuario.setUsuario(sc.nextLine());
+		
+		System.out.println("Introduce tu contraseña: ");
+		usuario.setContraseña(sc.nextLine());
+		
+		return usuario;
+	}
+	
 	public static String pedirDniCliente(Scanner sc) {
 		String dni;
 		System.out.println("Introduce el dni del cliente:");
